@@ -1,6 +1,6 @@
 
 # Godot C++ CMaker
-Fork of yehuthi's work just with directory and removal of godot-cpp submodule for internal workflow of FFG
+Fork of yehuthi's work just of godot-cpp submodule for internal workflow of FFG
 ## Initialization
 
 ```shell

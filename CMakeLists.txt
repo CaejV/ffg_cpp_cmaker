@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
-add_subdirectory(../godot-cpp SYSTEM)
+set(PROJECT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/..")
+add_subdirectory(${PROJECT_DIRECTORY}/godot-cpp ${PROJECT_DIRECTORY}/cmake-build SYSTEM)
 get_target_property(GODOTCPP_SUFFIX godot::cpp GODOTCPP_SUFFIX)
 set(GODOTCPP_SUFFIX ${GODOTCPP_SUFFIX} CACHE INTERNAL "Godot CPP Suffix")
 
@@ -10,8 +11,10 @@ set(GODOTCPPMAKER_DIR ${CMAKE_CURRENT_SOURCE_DIR} CACHE INTERNAL "Godot CPP Make
 function(gdextension library_target)
 	if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/game")
 		set(OUT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/game/bin")
+		message(STATUS "✅ Found game folder! Compiling to: ${OUT_DIR}")
 	else()
 		set(OUT_DIR "${CMAKE_BINARY_DIR}/bin")
+		message(FATAL_ERROR "❌ ERROR: Could not find the game folder! CMake looked exactly here: ${PROJECT_DIRECTORY}/game")
 	endif()
 
 	target_link_libraries(${library_target} PRIVATE godot::cpp)
