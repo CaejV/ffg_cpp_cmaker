@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
-set(PROJECT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/..")
-add_subdirectory(${PROJECT_DIRECTORY}/godot-cpp ${PROJECT_DIRECTORY}/cmake-build SYSTEM)
+set(PROJECT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/../..")
+add_subdirectory(${PROJECT_DIRECTORY}/extern/godot-cpp ${PROJECT_DIRECTORY}/extern/cmake-build SYSTEM)
 get_target_property(GODOTCPP_SUFFIX godot::cpp GODOTCPP_SUFFIX)
 set(GODOTCPP_SUFFIX ${GODOTCPP_SUFFIX} CACHE INTERNAL "Godot CPP Suffix")
 
