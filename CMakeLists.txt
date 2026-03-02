@@ -19,6 +19,7 @@ function(gdextension library_target)
 
 	target_link_libraries(${library_target} PRIVATE godot::cpp)
 	set_target_properties(${library_target} PROPERTIES
+		PREFIX ""
 		OUTPUT_NAME "${library_target}${GODOTCPP_SUFFIX}"
 
 		# Linux
