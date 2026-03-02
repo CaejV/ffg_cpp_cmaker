@@ -1,10 +1,11 @@
-# Godot C++ CMaker
 
+# Godot C++ CMaker
+Fork of yehuthi's work just with directory and removal of godot-cpp submodule for internal workflow of FFG
 ## Initialization
 
 ```shell
 git init
-git submodule add git@github.com:yehuthi/godot_cpp_cmaker.git
+git submodule add git@github.com:caejv/ffg_cpp_cmaker.git
 git submodule update --init --recursive
 ```
 
